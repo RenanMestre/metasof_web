@@ -1,0 +1,102 @@
+html, body {
+    background: linear-gradient(135deg, #000000, #2a5298);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 0;
+    scroll-behavior: smooth;
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-parceiro .container {
+    max-width: 600px;
+    margin: auto;
+}
+
+form {
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+input.form-control {
+    border-radius: 6px;
+    height: 45px;
+    font-size: 14px;
+}
+
+input.form-control:focus {
+    border-color: #224985;
+    box-shadow: 0 0 0 0.2rem rgba(34, 73, 133, 0.25);
+}
+
+button.btn {
+    height: 45px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.voltar {
+    margin: 12px 250px;
+}
+
+.voltar button {
+    color: white;
+    background-color: rgb(107, 6, 6);
+    border: none;
+    border-radius: 5px;
+    height: 45px;
+    width: 70px;
+    font-size: 18px;
+}
+
+.voltar button:hover {
+    background-color: rgb(199, 12, 12);
+}
+
+.wrapper {
+    min-height: calc(100vh - 100px); /* altura da tela - altura do footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Footer */
+footer {
+    background: #6c757d;
+    color: white;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+    .form-parceiro {
+        padding: 20px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="/css/parceiro.css">-->
+    <link rel="stylesheet" th:href="@{/css/parceiro.css}">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="form-parceiro">
+            <h1 class="text-center mb-4">Se torne nosso parceiro!</h1>
+
+            <div class="container">
+                <form action="#" method="post" class="bg-white shadow-sm rounded p-4">
+                    <h2 class="mb-4">Preencha o formulário</h2>
+
+                    <div class="mb-3">
+                        <label for="empresa" class="form-label">Empresa:</label>
+                        <input type="text" id="empresa" name="empresa" class="form-control" placeholder="Nome da empresa" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gerente" class="form-label">Gerente responsável:</label>
+                        <input type="text" id="gerente" name="gerente" class="form-control" placeholder="Nome do gerente" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="endereco" class="form-label">Endereço da empresa:</label>
+                        <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereço da empresa" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="Telefone">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="celular" class="form-label">Celular:</label>
+                        <input type="tel" id="celular" name="celular" class="form-control" placeholder="Celular" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email comercial:</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email comercial" required>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                        <button type="reset" class="btn btn-outline-secondary w-100">Limpar</button>
+                    </div>
+                </form>
+                <div class="voltar">
+                    <a th:href="@{/login}"><button>Sair</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 MetaSoft. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>

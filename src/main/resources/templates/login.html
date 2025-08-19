@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - MetaSoft</title>
+    <!-- Bootstrap CSS -->
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/login.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Login</h2>
+
+    <!-- Formulário de Login do Spring Security -->
+    <form th:action="@{/login}" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">E-mail</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="seuemail@exemplo.com" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required />
+        </div>
+
+        <!-- Aqui aparece a mensagem de erro, se houver -->
+        <div th:if="${erro}" class="alert alert-danger mt-3" th:text="${erro}"></div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-login">Entrar</button>
+        </div>
+
+
+        <div class="form-footer mt-3 text-center">
+            <p>Esqueceu a senha? <a href="#">Recuperar</a></p>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

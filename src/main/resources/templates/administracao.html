@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Administração</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="css/administracao.css" />-->
+    <link rel="stylesheet" th:href="@{/css/administracao.css}">
+</head>
+<body>
+    <h1>Tela de administração</h1>
+
+    <h2>Tabela de empresas parceiras</h2>
+    <table class="company">
+        <thead>
+            <tr>
+                <th>Empresa</th>
+                <th>Gerente</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>Celular</th>
+                <th>E-mail</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="parceiro : ${parceiros}">
+                <td th:text="${parceiro.empresa}">Empresa</td>
+                <td th:text="${parceiro.gerente}">Gerente</td>
+                <td th:text="${parceiro.endereco}">Endereço</td>
+                <td th:text="${parceiro.telefone}">Telefone</td>
+                <td th:text="${parceiro.celular}">Celular</td>
+                <td th:text="${parceiro.email}">E-mail</td>
+                <td>                             
+                    <a th:href="@{/deletar/{id}(id=${parceiro.id})}">
+                        <button>Excluir</button>
+                    </a>
+                </td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(parceiros)}">
+                <td colspan="6" style="text-align: center; font-style: italic; color: #888;">Nenhuma empresa parceira cadastrada.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Tabela de funcionários</h2>
+    <table class="funcionarios">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <tr th:each="funcionario : ${funcionarios}">
+                    <td th:text="${funcionario.nome}">Nome</td>
+                    <td th:text="${funcionario.funcao}">Função</td>
+                    <td>                             
+                        <a th:href="@{/deletar/{id}(id=${funcionario.id})}">
+                            <button>Excluir</button>
+                        </a>
+                    </td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(funcionarios)}">
+                    <td colspan="4" style="text-align: center; font-style: italic; color: #888;">Nenhum pedido cadastrado.</td>
+                </tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Tabela de serviços</h2>
+    <table class="servicos">
+        <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Observações</th>
+              <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pedido : ${pedidos}">
+                <td th:text="${pedido.empresa}">Empresa</td>
+                <td th:text="${pedido.produto}">Produto</td>
+                <td th:text="${pedido.quantidade}">Quantidade</td>
+                <td th:text="${pedido.observacao}">Observações</td>
+                <td>                             
+                    <a th:href="@{/deletar/{id}(id=${pedido.id})}">
+                        <button>Excluir</button>
+                    </a>
+                </td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(pedidos)}">
+                <td colspan="4" style="text-align: center; font-style: italic; color: #888;">Nenhum pedido cadastrado.</td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/login}"><button>Sair</button></a>
+</body>
+</html>

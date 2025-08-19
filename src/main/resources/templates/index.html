@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaSoft</title>
+
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css}" rel="stylesheet">
+    
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" th:href="@{/}">MetaSoft</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" th:href="@{/}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#timeline">Linha do Tempo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#time">Time</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item">
+                        <a th:href="@{/login}">
+                            <button class="btn btn-outline-light ms-2">Login</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Espaçamento após o header fixo -->
+<div style="margin-top: 75px;"></div>
+
+<!-- Carrossel -->
+<section class="carrossel">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img th:src="@{https://picsum.photos/id/1015/1200/500}" class="d-block w-100" alt="Imagem da empresa">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Excelência em Metalurgia</h5>
+                    <p>Qualidade e inovação desde 2020</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img th:src="@{https://picsum.photos/id/1018/1200/500}" class="d-block w-100" alt="Produção">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Produção de Alta Precisão</h5>
+                    <p>Atendendo demandas nacionais e internacionais</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img th:src="@{https://picsum.photos/id/1020/1200/500}" class="d-block w-100" alt="Fábrica">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Equipe Especializada</h5>
+                    <p>Profissionais prontos para novos desafios</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- Sobre -->
+<section id="sobre" class="py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Sobre a empresa</h2>
+        <p class="lead">Fundada em 2020 pelo líder XXXXX, a MetaSoft é referência no setor metalúrgico...</p>
+    </div>
+</section>
+
+<!-- Linha do Tempo -->
+<section id="timeline" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Nossa História</h2>
+        <div class="timeline">
+            <div class="timeline-item"><i class="bi bi-flag"></i> 2020 - Inauguração</div>
+            <div class="timeline-item"><i class="bi bi-handshake"></i> 2021 - Parceria</div>
+            <div class="timeline-item"><i class="bi bi-gear"></i> 2022 - Expansão</div>
+            <div class="timeline-item"><i class="bi bi-globe"></i> 2023 - Internacional</div>
+        </div>
+    </div>
+</section>
+
+<!-- Time -->
+<section id="time" class="py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Conheça nossos profissionais</h2>
+        <div class="row justify-content-center g-4">
+            <div class="col-md-4 col-sm-6">
+                <div class="card text-center shadow-sm h-100">
+                    <img th:src="@{/img/Ilustracao.png}" class="card-img-top" alt="Profissional">
+                    <div class="card-body">
+                        <h5 class="card-title">Júnior</h5>
+                        <p class="card-text">Especialidade: Química</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card text-center shadow-sm h-100">
+                    <img th:src="@{/img/Ilustracao.png}" class="card-img-top" alt="Profissional">
+                    <div class="card-body">
+                        <h5 class="card-title">Iris</h5>
+                        <p class="card-text">Especialidade: Metal</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card text-center shadow-sm h-100">
+                    <img th:src="@{/img/Ilustracao.png}" class="card-img-top" alt="Profissional">
+                    <div class="card-body">
+                        <h5 class="card-title">Alves</h5>
+                        <p class="card-text">Especialidade: Mecânica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contato -->
+<section id="contato" class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Entre em Contato</h2>
+        <p><i class="bi bi-telephone-fill"></i> (11) 99999-9999</p>
+        <p><i class="bi bi-envelope-fill"></i> contato@metasoft.com.br</p>
+        <p><i class="bi bi-geo-alt-fill"></i> Rua Exemplo, 123 - São Paulo/SP</p>
+        <a th:href="@{/parceiro}" class="btn btn-outline-light mt-3">Se torne nosso parceiro</a>
+    </div>
+</section>
+
+<!-- Rodapé -->
+<footer class="bg-secondary text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 MetaSoft. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Scripts -->
+<script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>
