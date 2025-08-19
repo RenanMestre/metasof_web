@@ -13,7 +13,7 @@
 <div class="login-box">
     <h2>Login</h2>
 
-    <!-- Formulário de Login do Spring Security -->
+    <!-- Formulário de Login -->
     <form th:action="@{/login}" method="post">
         <div class="mb-3">
             <label for="username" class="form-label">E-mail</label>
@@ -25,16 +25,10 @@
             <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required />
         </div>
 
-        <!-- Aqui aparece a mensagem de erro, se houver -->
         <div th:if="${erro}" class="alert alert-danger mt-3" th:text="${erro}"></div>
 
         <div class="d-grid">
             <button type="submit" class="btn btn-login">Entrar</button>
-        </div>
-
-
-        <div class="form-footer mt-3 text-center">
-            <p>Esqueceu a senha? <a href="#">Recuperar</a></p>
         </div>
     </form>
 </div>

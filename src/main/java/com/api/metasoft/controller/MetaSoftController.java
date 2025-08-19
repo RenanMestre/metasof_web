@@ -1,5 +1,6 @@
 package com.api.metasoft.controller;
 
+import com.api.metasoft.repository.FuncionariosRepository;
 import com.metasoft.thymeleaf.Pedidos;
 import com.metasoft.thymeleaf.Parceiros;
 import com.api.metasoft.repository.PedidosRepository;
@@ -18,6 +19,9 @@ public class MetaSoftController {
     @Autowired
     private ParceirosRepository parceirosRepository;
     
+    @Autowired
+    private FuncionariosRepository funcionariosRepository;
+    
     // ========== PARCEIROS ==========
     @PostMapping("/parceiro")
     public String salvarParceiro(@ModelAttribute Parceiros parceiro) {
@@ -28,11 +32,10 @@ public class MetaSoftController {
     @GetMapping("/deletar-parceiro/{id}")
     public String deletarParceiro(@PathVariable("id") Long id) {
         parceirosRepository.deleteById(id);
-        return "redirect:/parceiro";
+        return "redirect:/administracao";
     }
 
     // ========== PEDIDOS ==========
-
     @PostMapping("/pedidos")
     public String salvarPedido(@ModelAttribute Pedidos pedido) {
         pedidosRepository.save(pedido);
@@ -42,6 +45,13 @@ public class MetaSoftController {
     @GetMapping("/deletar-pedido/{id}")
     public String deletarPedido(@PathVariable("id") Long id) {
         pedidosRepository.deleteById(id);
-        return "redirect:/pedidos";
+        return "redirect:/administracao";
+    }
+    
+    // ========== FUNCIONÁRIOS ==========
+    @GetMapping("/deletar-funcionario/{id}")
+    public String deletarFuncionario(@PathVariable("id") Long id) {
+        funcionariosRepository.deleteById(id);
+        return "redirect:/administracao";
     }
 }

@@ -33,7 +33,7 @@
                 <td th:text="${parceiro.celular}">Celular</td>
                 <td th:text="${parceiro.email}">E-mail</td>
                 <td>                             
-                    <a th:href="@{/deletar/{id}(id=${parceiro.id})}">
+                    <a th:href="@{/deletar-parceiro/{id}(id=${parceiro.id})}">
                         <button>Excluir</button>
                     </a>
                 </td>
@@ -59,7 +59,7 @@
                     <td th:text="${funcionario.nome}">Nome</td>
                     <td th:text="${funcionario.funcao}">Função</td>
                     <td>                             
-                        <a th:href="@{/deletar/{id}(id=${funcionario.id})}">
+                        <a th:href="@{/deletar-funcionario/{id}(id=${funcionario.id})}">
                             <button>Excluir</button>
                         </a>
                     </td>
@@ -89,7 +89,7 @@
                 <td th:text="${pedido.quantidade}">Quantidade</td>
                 <td th:text="${pedido.observacao}">Observações</td>
                 <td>                             
-                    <a th:href="@{/deletar/{id}(id=${pedido.id})}">
+                    <a th:href="@{/deletar-pedido/{id}(id=${pedido.id})}">
                         <button>Excluir</button>
                     </a>
                 </td>
