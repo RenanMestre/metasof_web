@@ -8,12 +8,6 @@ Sistema web para administração de empresas parceiras, funcionários e serviço
 
 ---
 
-## 📸 Preview
-
-![Preview da Tela de Administração](caminho/para/screenshot.png)
-
----
-
 ## 🚀 Tecnologias Utilizadas
 
 - **Java 17**
